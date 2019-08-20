@@ -1,0 +1,36 @@
+.post-container {
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 4px 4px 10px #d6d6d6;
+  transition: 0.3s;
+}
+
+.post-container:hover{
+  background-color: #fff;
+  box-shadow:  5px 5px 16px #cccccc;
+}
+
+.action-button {
+  padding: 10px;
+  float: right;
+  display: inline-block;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: normal;
+  border: 1px solid #dedede;
+}
+
+.edit-button{
+}
+.edit-button:hover{
+  background-color: #eee;
+}
+
+.delete-button{
+}
+
+.delete-button:hover{
+  background-color: #eee;
+}
+

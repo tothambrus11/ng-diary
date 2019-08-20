@@ -1,0 +1,11 @@
+<page-container>
+  <h1>Bejegyzések</h1>
+  <div *ngIf="posts !== undefined">
+    <div *ngFor="let post of posts" class="post-container">
+      <a [routerLink]="'/edit/' + post.id" class="action-button edit-button">Szerkesztés</a>
+      <a [routerLink]="'/remove/' + post.id" class="action-button delete-button">Törlés</a>
+      <h2 style="margin-top: 0;">{{post.date | date:"yyyy.MM.dd"}} - {{post.title}}</h2>
+      <div [innerHTML]="post.content"></div>
+    </div>
+  </div>
+</page-container>

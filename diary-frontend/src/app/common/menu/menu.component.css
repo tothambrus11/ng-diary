@@ -1,0 +1,23 @@
+#menu {
+  background-color: var(--accent-bg-color);
+  color: var(--accent-text-color);
+}
+
+#menu a {
+  padding: 15px 30px;
+  display: inline-block;
+  color: var(--accent-text-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+#menu a:hover{
+  background-color: var(--accent-bg-hover-color);
+}
+
+#menu-title{
+  display: inline-block;
+  padding: 0 40px 0 15px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}

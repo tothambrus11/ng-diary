@@ -1,0 +1,27 @@
+<page-container>
+  <h1>Regisztráció</h1>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <mat-form-field class="auth-form-input">
+      <input matInput placeholder="Név" type="name" name="name" [(ngModel)]="registerData.displayName" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="auth-form-input">
+      <input matInput placeholder="Email" type="email" email name="email" [(ngModel)]="registerData.email" required>
+      <mat-error
+        *ngIf="form.controls.email && form.controls.email.errors && form.controls.email.errors">{{form.controls.email.errors.takenEmail}}</mat-error>
+
+    </mat-form-field>
+    <br>
+    <mat-form-field class="auth-form-input">
+      <input matInput placeholder="Jelszó" type="password" name="password" [(ngModel)]="registerData.password" required>
+
+    </mat-form-field>
+    <br>
+
+    <submit-button>Regisztráció</submit-button>
+    <br>
+    <div style="margin-top: 20px;">
+      Van már fiókod? <a routerLink="/auth/login/">Jelentkezz be!</a>
+    </div>
+  </form>
+</page-container>

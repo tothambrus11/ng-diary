@@ -1,0 +1,24 @@
+<!--suppress HtmlFormInputWithoutLabel -->
+<page-container *ngIf="post!==undefined">
+  <h1 *ngIf="isNewPost">Új bejegyzés</h1>
+  <h1 *ngIf="!isNewPost">Bejegyzés szerkesztése</h1>
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <mat-form-field style="margin-right: 20px;">
+      <input matInput placeholder="Cím" name="title" [(ngModel)]="post.title" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" name="date" placeholder="Dátum" [(ngModel)]="post.date" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div style="width: available">
+      <ckeditor [editor]="Editor" data="" name="content"
+                [(ngModel)]="post.content"
+                [config]="CKEditorConfig">
+      </ckeditor>
+    </div>
+
+    <submit-button style="margin-top: 10px;">Mentés</submit-button>
+  </form>
+
+</page-container>

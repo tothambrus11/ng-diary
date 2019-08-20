@@ -1,0 +1,18 @@
+<page-container>
+  <h1>Bejelentkezés</h1>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <mat-form-field class="auth-form-input">
+      <input matInput placeholder="Email" type="email" email name="email" [(ngModel)]="loginData.email" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="auth-form-input">
+      <input matInput placeholder="Jelszó" type="password" name="password" [(ngModel)]="loginData.password" required>
+    </mat-form-field>
+    <br>
+    <submit-button>Bejelentkezés</submit-button>
+    <br>
+    <div style="margin-top: 20px;">
+      Még nincs fiókod? <a routerLink="/auth/register">Regisztrálj!</a>!
+    </div>
+  </form>
+</page-container>
